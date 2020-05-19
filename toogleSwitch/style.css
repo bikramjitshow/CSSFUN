@@ -1,0 +1,58 @@
+body, html {
+	margin: 0;
+	height: 100%;
+}
+body {
+	background-color: rgb(236, 236, 236);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.switch {
+	display: block;
+	margin-bottom: 50px;
+	width: 100px;
+	height: 40px;
+	position: relative;
+}
+.switch input {
+	display: none;
+}
+.slider {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	background-color: white;
+	border: 3px solid #10af5e;
+	box-shadow: 1px 1px 5px rgba(0,0,0,0.4);
+	border-radius: 50px;
+
+}
+input:checked + .slider {
+	background-color: #10af5e;
+}
+.slider::before {
+	content: "";
+	position: absolute;
+	top: 6px;
+    left: 2px;
+	transition: .5s;
+}
+.slider.round::before {
+	top: 6px;
+    left: 2px;
+    background-color: lightgrey;
+    transition: .5s;
+    width: 22%;
+    height: 40%;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    transform: rotateZ(-45deg);
+}
+input:checked + .slider::before {
+	transform: translateX(69px) rotateZ(45deg);
+	background-color: yellow;
+}
+
